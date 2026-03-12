@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:       #F1F5F9;
+  --surface:  #FFFFFF;
+  --border:   #E2E8F0;
+  --border-2: #CBD5E1;
+
+  --text-1:   #0F172A;
+  --text-2:   #475569;
+  --text-3:   #94A3B8;
+
+  --sidebar:  #0F172A;
+
+  --brand:    #0D9488;
+  --brand-dk: #0F766E;
+  --brand-lt: #F0FDFA;
+  --brand-md: #CCFBF1;
+
+  --row-hover: #F8FAFC;
+  --row-stripe: #FAFBFC;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* Table base */
+table { border-collapse: collapse; width: 100%; }
+
+/* Input resets */
+input, select, textarea {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-size: 13px;
+  color: var(--text-1) !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  outline: none !important;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input:focus, select:focus {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.1) !important;
+}
+input::placeholder { color: var(--text-3) !important; }
+select option { background: white; color: var(--text-1); }
+
+/* Utility */
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.surface { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+
+/* Segment badge base */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* Table row animations */
+@keyframes rowIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
